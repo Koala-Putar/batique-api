@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: '.'
+      dockerfile: Dockerfile.dev
+      args:
+        uid: ${UID}
+    container_name: batique-api
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8000:80
+    networks:
+      backend:
+        aliases:
+          - batique-api
+
+networks:
+  backend:
+    name: backend-network
