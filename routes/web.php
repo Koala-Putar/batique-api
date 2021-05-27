@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/batik', 'BatikController@index');
+$router->get('/batik/{id}', 'BatikController@show');
+
+$router->get('/category', 'BatikCategoryController@index');
+$router->get('/category/{id}', 'BatikCategoryController@show');
