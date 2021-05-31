@@ -16,9 +16,14 @@ class CreateBatiksTable extends Migration
         Schema::create('batiks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
+            $table->text('image');
             $table->text('description');
-            $table->bigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
+
+            $table->foreign('category_id')
+            ->references('id')
+            ->on('batik_categories')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class BatikCategory extends Model
 {
     protected $guarded = [];
+
+    public function batiks()
+    {
+        return $this->hasMany(Batik::class);
+    }
 }

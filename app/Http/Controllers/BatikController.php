@@ -6,7 +6,7 @@ use App\Models\Batik;
 
 class BatikController extends Controller
 {
-    
+
 
     /**
      * Create a new controller instance.
@@ -16,7 +16,20 @@ class BatikController extends Controller
     public function index()
     {
         $batiks = Batik::all();
-        return response()->json($batiks);
+
+        $newResponse = [];
+
+        foreach($batiks as $i => $batik) {
+            $newResponse[$i]['id'] = $batik->id;
+            $newResponse[$i]['name'] = $batik->name;
+            $newResponse[$i]['image'] = $batik->image;
+            $newResponse[$i]['description'] = $batik->description;
+            $newResponse[$i]['category']['id'] = $batik->category->id;
+            $newResponse[$i]['category']['name'] = $batik->category->name;
+            $newResponse[$i]['category']['description'] = $batik->category->description;
+        }
+
+        return response()->json($newResponse);
     }
 
     /**
