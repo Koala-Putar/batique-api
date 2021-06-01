@@ -1,5 +1,5 @@
 # Batique API
-API Documentation : [Batique API Documentation](https://koala-putar.github.io/batique-api-doc)
+API Documentation : [Batique API Documentation](https://koala-putar.github.io/batique-api-doc) \
 API Link : [Batique API](https://batique-api-uzot7wghja-et.a.run.app)
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -36,4 +36,4 @@ docker-compose down
 ```
 
 ## Deployment
-- [Deploy on Google Cloud Platform ](https://github.com/Koala-Putar/batique-api/blob/master/doc/deploygcp.md)
+- [Deploy on Google Cloud Platform ](https://github.com/Koala-Putar/batique-api/blob/master/doc/deployment/deploygcp.md)
